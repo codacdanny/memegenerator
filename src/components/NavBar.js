@@ -1,4 +1,6 @@
 import logo from "../images/meme2.png";
+import { DiGithubBadge } from "react-icons/di";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
@@ -6,9 +8,17 @@ const NavBar = () => {
     <nav>
       <div className=" logo-right">
         <img src={logo} alt="meme logo" className="logo-image" />
-        <p className="logo-text">meme generator</p>
+        <h1 className="logo-text">meme generator</h1>
       </div>
-      <div className="logo-title">REact Meme project</div>
+      <div>
+        <Link
+          to="https://github.com/codacdanny/memegenerator.git"
+          className="github"
+        >
+          <p>Github</p>
+          <DiGithubBadge />
+        </Link>
+      </div>
     </nav>
   );
 };

@@ -1,15 +1,19 @@
 body {
   margin: 0;
   padding: 0;
+  background: #e9e3e3;
 }
 html {
   font-size: 62.5%;
 }
 nav {
   display: flex;
+
   align-items: center;
+  margin-bottom: 0.6rem;
+
   justify-content: space-between;
-  padding: 1rem 0.5rem;
+  padding: 0.6rem 0.5rem;
   background-image: linear-gradient(
     to right,
     #38025c,
@@ -25,6 +29,16 @@ nav {
   font-weight: 400;
   word-spacing: 0.5rem;
 }
+
+h2 {
+  text-transform: uppercase;
+  font-family: cursive;
+  font-size: 1.8rem;
+  margin: 2rem auto;
+  color: #161515;
+  width: 450px;
+}
+
 .logo-image {
   max-width: 5rem;
   margin-right: 1.2rem;
@@ -40,28 +54,52 @@ nav {
   font-weight: 400;
   word-spacing: 0.5rem;
 }
-.logo-title {
-  margin-right: 1rem;
+.github {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  color: #fff;
+  font-size: 2rem;
+  font-family: "Lucida Sans";
+  text-transform: capitalize;
+  font-weight: 400;
+  word-spacing: 0.5rem;
+  text-decoration: none;
 }
 
 /* MAIN  COMPONENT*/
 .main {
   padding: 3.6rem;
+  margin: 0 auto;
 }
 .form {
-  display: grid;
-  grid-template: 4rem 4rem / 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 1.7rem;
 }
-
+.input {
+  padding: 1rem;
+  border: 1.3px solid #5f0797;
+  border-radius: 1rem;
+  background: #ccc6c6d7;
+}
 .form-text {
   border-radius: 0.5rem;
   border: 1px solid #d5d4d8;
   text-indent: 0.5rem;
 }
+
+.centerBtn {
+  text-align: center;
+}
 .btn {
-  grid-column: 1 / -1;
-  border-radius: 0.5rem;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  width: 30rem;
   background-image: linear-gradient(
     to right,
     #38025c,
@@ -77,15 +115,16 @@ nav {
 
 .meme-image {
   display: block;
-  width: 40rem;
-  height: 35rem;
-  margin: 0 auto;
+  width: 70vh;
+  height: 70vh;
+
+  margin: 10px auto;
 }
 .meme {
   position: relative;
 }
 
-.meme--text {
+/* .meme--text {
   width: 40rem;
   word-wrap: normal;
   position: absolute;
@@ -103,7 +142,7 @@ nav {
   text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000,
     -2px 2px 0 #000, 0 2px 0 #000, 2px 0 0 #000, 0 -2px 0 #000, -2px 0 0 #000,
     2px 2px 5px #000;
-}
+} */
 
 .bottom {
   bottom: 0;
@@ -111,4 +150,25 @@ nav {
 
 .top {
   top: 0;
+}
+
+/* generatedImage*/
+.generatedImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4rem auto;
+}
+
+.generatedBtn {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/*dropzone*/
+
+.testing {
+  z-index: 5;
+  height: 78vh;
+  width: 80vw;
 }
