@@ -8,7 +8,7 @@ const NavBar = () => {
     <nav>
       <div className=" logo-right">
         <img src={logo} alt="meme logo" className="logo-image" />
-        <h1 className="logo-text">meme generator</h1>
+        <h1 className="logo-text">Mememify</h1>
       </div>
       <div>
         <Link

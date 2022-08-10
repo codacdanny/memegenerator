@@ -1,16 +1,15 @@
-import React, { createContext, useContext } from "react";
+import React from "react";
 import Dropzone from "react-dropzone-uploader";
 import "react-dropzone-uploader/dist/styles.css";
-import { useNavigate } from "react-router-dom";
 import { getDroppedOrSelectedFiles } from "html5-file-selector";
 import { useState } from "react";
 import CustomizeMeme from "./CustomizeMeme";
 
-const customImageContext = createContext();
-
 const FileUploadComponent = ({ children }) => {
-  const navigate = useNavigate();
   const [image, setImage] = useState();
+
+  let dropzoneWidth = window.innerWidth - 30;
+
   const fileParams = ({ meta }) => {
     return { url: "https://httpbin.org/post" };
   };
@@ -19,7 +18,6 @@ const FileUploadComponent = ({ children }) => {
     if (status === "done") {
       console.log(meta, file, status);
       setImage(meta.previewUrl);
-      // navigate("/customize");
     }
   };
   const onSubmit = (files, allFiles) => {
@@ -34,10 +32,15 @@ const FileUploadComponent = ({ children }) => {
     });
   };
   const selectFileInput = ({ onFiles, files, getFilesFromEvent }) => {
-    const textMsg =
-      files.length > 0 ? "Upload Again" : "Upload/Drag and drop Your Image";
+    const textToDisplay =
+      window.innerWidth >= 768
+        ? "Upload/Drag and drop Your Image"
+        : "Upload your Image";
+
+    const textMsg = files.length > 0 ? "Upload Again" : textToDisplay;
+    // "Upload/Drag and drop Your Image";
     return (
-      <label className="btn btn-danger mt-4">
+      <label className="btn centerBtn">
         {textMsg}
         <input
           style={{ display: "none" }}
@@ -54,15 +57,12 @@ const FileUploadComponent = ({ children }) => {
     );
   };
 
-  const check = () => {
-    console.log(image);
-  };
   return image ? (
     <CustomizeMeme image={image} />
   ) : (
     <div>
       <Dropzone
-        onSubmit={(onSubmit, check)}
+        onSubmit={onSubmit}
         onChangeStatus={onFileChange}
         InputComponent={selectFileInput}
         getUploadParams={fileParams}
@@ -71,23 +71,13 @@ const FileUploadComponent = ({ children }) => {
         maxFiles={1}
         inputContent="Drop A File"
         styles={{
-          dropzone: { width: 600, height: 400 },
+          dropzone: { width: dropzoneWidth, height: 400 },
           dropzoneActive: { borderColor: "green" },
         }}
       />
-      {/* <customImageContext.Provider
-        value={{
-          image,
-        }}
-      >
-        {children}
-      </customImageContext.Provider> */}
     </div>
   );
 };
-// export function useMeme() {
-//   return useContext(customImageContext);
-// }
 
 export default FileUploadComponent;
 

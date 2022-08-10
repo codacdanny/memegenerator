@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const CustomizeMeme = ({ image }) => {
   const canvas = useRef(null);
-  const [memeImage, setMemeImage] = useState(null);
+
   const [topText, setTopText] = useState("");
   const [bottomText, setBottomText] = useState("");
-
-  // useEffect(() => {
-
-  //   rawImage.onload = () => setMemeImage(rawImage);
-  // }, [image]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (image && canvas) {
       const ctx = canvas.current.getContext("2d");
@@ -28,20 +24,26 @@ const CustomizeMeme = ({ image }) => {
     }
   }, [image, canvas, topText, bottomText]);
   return (
-    <div>
+    <div className="logo-right">
       <canvas ref={canvas} width={400} height={256 + 80} />
 
       <input
-        type="text"
+        className="input"
         value={topText}
         onChange={(e) => setTopText(e.target.value)}
       />
       <input
-        type="text"
+        className="input"
         value={bottomText}
         onChange={(e) => setBottomText(e.target.value)}
       />
-      <img src={image} alt="meme to fix" className="testing" id="cow" hidden />
+
+      <div className="centerBtn">
+        <button className="btn" onClick={() => navigate("/")}>
+          Home
+        </button>
+      </div>
+      {/* <img src={image} alt="meme to fix" className="testing" hidden /> */}
     </div>
   );
 };

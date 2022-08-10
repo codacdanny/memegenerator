@@ -10,12 +10,12 @@ const GeneratedMeme = () => {
   let query = url.get("url");
 
   const downloadImage = () => {
-    saveAs(query, "image.jpg"); // Put your image url here.
+    saveAs(query, "image.jpg");
   };
   return (
     <div>
-      {query && <img className="generatedImage" alt="meme" src={query} />}
-      <div className="generatedBtn">
+      {query && <img className="editMeme" alt="meme" src={query} />}
+      <div className="generatedBtn centerBtn">
         <button className="btn" onClick={() => navigate("/")}>
           Home
         </button>
