@@ -22,7 +22,7 @@ const FileUploadComponent = ({ children }) => {
   };
   const onSubmit = (files, allFiles) => {
     allFiles.forEach((f) => f.remove());
-    // console.log(image);
+
   };
   const getFilesFromEvent = (e) => {
     return new Promise((resolve) => {
