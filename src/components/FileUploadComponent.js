@@ -38,7 +38,7 @@ const FileUploadComponent = ({ children }) => {
         : "Upload your Image";
 
     const textMsg = files.length > 0 ? "Upload Again" : textToDisplay;
-    // "Upload/Drag and drop Your Image";
+
     return (
       <label className="btn centerBtn">
         {textMsg}
@@ -81,30 +81,4 @@ const FileUploadComponent = ({ children }) => {
 
 export default FileUploadComponent;
 
-// import React from "react";
 
-// import { useState, useEffect, useRef } from "react";
-
-// const CreateMeme = () => {
-//   const [topText, setTopText] = useState("");
-//   const [bottomText, setBottomText] = useState("");
-//   const canvas = useRef(null);
-//   return (
-//     <div>
-//       <canvas ref={canvas} width={400} height={256 + 80} />
-
-//       <input
-//         type="text"
-//         value={topText}
-//         onChange={(e) => setTopText(e.target.value)}
-//       />
-//       <input
-//         type="text"
-//         value={bottomText}
-//         onChange={(e) => setBottomText(e.target.value)}
-//       />
-//     </div>
-//   );
-// };
-
-// export default CreateMeme;

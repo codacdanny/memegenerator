@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { useMeme } from "./ImageContext";
+
 
 const MemeImage = (props) => {
   const [captions, setCaptions] = useState([]);

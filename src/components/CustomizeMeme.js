@@ -1,21 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
-// import { saveAs } from "file-saver";
-// import { Link } from "react-router-dom";
+import { saveAs } from "file-saver";
 
 const CustomizeMeme = ({ image }) => {
-  // const downloadImage = (el) => {
-  //   // if (el.target.id === "download") {
-  //   //   saveAs(image, "meme.jpg");
-  //   // }
-
-  //   if (finishedImage) {
-  //     saveAs(finishedImage, "meme.jpg");
-  //   }
-  //   // saveAs(query, "image.jpg");
-  //   // let image = canvas.toDataURL("image/jpg");
-  //   // el.href = image;
-  // };
-  // let finishedImage;
+  const downloadImage = () => {
+    if (finishedImage) {
+      saveAs(finishedImage, "meme.jpg");
+    }
+  };
+  let finishedImage;
   const canvas = useRef(null);
 
   const [topText, setTopText] = useState("");
@@ -35,7 +27,7 @@ const CustomizeMeme = ({ image }) => {
       ctx.textAlign = "center";
       ctx.fillText(topText, 400 / 2, 25);
       ctx.fillText(bottomText, 400 / 2, 256 + 40 + 25);
-      // finishedImage = canvas.toDataURL("image/png");
+      finishedImage = canvas.current.toDataURL("image/jpg");
     }
   }, [image, canvas, topText, bottomText]);
   return (
@@ -56,15 +48,12 @@ const CustomizeMeme = ({ image }) => {
       </div>
       <canvas ref={canvas} width={400} height={256 + 80} />
 
-      {/* {finishedImage && (
-        <div className="centerBtn">
-          <a href={finishedImage} onClick={() => downloadImage(this)}>
-            {" "}
-            download Image
-          </a>
-        </div>
-      )} */}
-      {/* <img src={image} alt="meme to fix" className="testing" hidden /> */}
+      <div className="centerBtn">
+        <button className="btn" onClick={downloadImage}>
+         
+          Download Image
+        </button>
+      </div>
     </div>
   );
 };
