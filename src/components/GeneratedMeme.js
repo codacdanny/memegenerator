@@ -16,9 +16,7 @@ const GeneratedMeme = () => {
     <div>
       {query && <img className="editMeme" alt="meme" src={query} />}
       <div className="generatedBtn centerBtn">
-        <button className="btn" onClick={() => navigate("/")}>
-          Home
-        </button>
+       
         <button className="btn" onClick={downloadImage}>
           Download
         </button>

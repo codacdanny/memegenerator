@@ -264,12 +264,6 @@ nav {
   width: calc(100vw - 30%);
 }
 
-.generatedBtn {
-  display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
-}
-
 .customizeMeme {
   width: calc(100vw - 20%);
 }
