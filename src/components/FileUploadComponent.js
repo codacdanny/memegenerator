@@ -16,13 +16,11 @@ const FileUploadComponent = ({ children }) => {
   const onFileChange = ({ meta, file }, status) => {
     console.log(meta, file, status);
     if (status === "done") {
-      console.log(meta, file, status);
       setImage(meta.previewUrl);
     }
   };
   const onSubmit = (files, allFiles) => {
     allFiles.forEach((f) => f.remove());
-
   };
   const getFilesFromEvent = (e) => {
     return new Promise((resolve) => {
@@ -80,5 +78,3 @@ const FileUploadComponent = ({ children }) => {
 };
 
 export default FileUploadComponent;
-
-
