@@ -94,12 +94,13 @@ nav {
 .arrowText {
   font-size: 1.6rem;
   font-family: sans-serif;
-  font-weight: 400;
-  color: #363333;
+  font-weight: 600;
+  color: #242222;
 }
 
 .centerCreateMeme {
   display: flex;
+
   justify-content: center;
   align-items: center;
   margin: 2rem 0;
@@ -286,6 +287,9 @@ nav {
   nav {
     padding: 0.4rem 0.5rem;
 
+    font-size: 2rem;
+  }
+  .arrowText {
     font-size: 2rem;
   }
   .btn-create {

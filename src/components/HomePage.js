@@ -16,7 +16,11 @@ const HomePage = () => {
   return meme ? (
     <main className="main">
       <div className="centerCreateMeme">
-        <span className="arrowText">Click to ceate your own meme</span>{" "}
+        {window.innerWidth < 312 ? (
+          <span className="arrowText">Click to ceate your own meme</span>
+        ) : (
+          <span className="arrowText">Click here to ceate your own meme</span>
+        )}{" "}
         <span className="arrow" onClick={() => navigate("/uploadMeme")}>
           <Icon icon="ion:arrow-forward-circle" />
         </span>

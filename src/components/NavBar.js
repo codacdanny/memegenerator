@@ -1,6 +1,6 @@
 import logo from "../images/meme2.png";
 import { DiGithubBadge } from "react-icons/di";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -10,8 +10,8 @@ const NavBar = () => {
   return (
     //build the header nav
     <nav>
-      <Link
-        to="https://github.com/codacdanny/memegenerator.git"
+      <a
+        href="https://github.com/codacdanny/memegenerator.git"
         className="github"
       >
         <div className=" logo-right">
@@ -20,7 +20,7 @@ const NavBar = () => {
             Mememify <DiGithubBadge />
           </h1>
         </div>
-      </Link>
+      </a>
       <div>
         {pathname === "/" ? (
           <></>
