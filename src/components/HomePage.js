@@ -1,6 +1,7 @@
 import { Zoom } from "react-reveal";
 import { useNavigate } from "react-router-dom";
 import { useMeme } from "./ImageContext";
+import { Icon } from "@iconify/react";
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -14,10 +15,11 @@ const HomePage = () => {
 
   return meme ? (
     <main className="main">
-      <div className="centerBtn">
-        <button className="btn" onClick={() => navigate("/uploadMeme")}>
-          Create Your Own meme
-        </button>
+      <div className="centerCreateMeme">
+        <span className="arrowText">Click to ceate your own meme</span>{" "}
+        <span className="arrow" onClick={() => navigate("/uploadMeme")}>
+          <Icon icon="ion:arrow-forward-circle" />
+        </span>
       </div>
 
       <div className="meme">

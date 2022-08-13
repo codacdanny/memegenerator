@@ -48,7 +48,7 @@ nav {
   margin-bottom: 3rem;
 
   justify-content: space-between;
-  padding: 0.6rem 0.5rem;
+  padding: 0.3rem 0.5rem;
   background-image: linear-gradient(
     to right,
     #38025c,
@@ -65,6 +65,46 @@ nav {
   font-weight: 400;
 
   /* width: calc(100%- 2rem); */
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #5f0797;
+  font-size: 3rem;
+  font-weight: 500;
+  animation: beat 0.45s infinite alternate;
+  transform-origin: center;
+
+  /* Heart beat animation */
+
+  cursor: pointer;
+}
+/* Heart beat animation */
+@keyframes beat {
+  to {
+    transform: scale(1.3);
+  }
+}
+
+.arrowText {
+  font-size: 1.6rem;
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #363333;
+}
+
+.centerCreateMeme {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 0.5rem 0;
+  gap: 0.7rem;
 }
 
 .instruction {
@@ -104,6 +144,8 @@ nav {
   font-weight: 400;
   word-spacing: 0.5rem;
   font-size: 1.7rem;
+  display: flex;
+  align-items: center;
 }
 .github {
   display: flex;
@@ -117,6 +159,18 @@ nav {
   word-spacing: 0.5rem;
   text-decoration: none;
   cursor: pointer;
+}
+
+.home {
+  text-decoration: capitalize;
+  padding: 0.3rem 1rem;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  font-size: 1.6rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 400;
 }
 
 /* MAIN  COMPONENT*/
@@ -219,6 +273,14 @@ nav {
 .customizeMeme {
   width: calc(100vw - 20%);
 }
+.customizeMemeInputs {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 
 @media screen and (min-width: 350px) {
   .btn {
@@ -228,26 +290,9 @@ nav {
 
 @media screen and (min-width: 550px) {
   nav {
-    display: flex;
+    padding: 0.4rem 0.5rem;
 
-    align-items: center;
-    margin-bottom: 1rem;
-
-    justify-content: space-between;
-    padding: 0.6rem 0.5rem;
-    background-image: linear-gradient(
-      to right,
-      #38025c,
-      #4b0479,
-      #5f0797,
-      #730ab6,
-      #880fd6
-    );
-    color: #fff;
     font-size: 2rem;
-    font-family: cursive;
-    text-transform: capitalize;
-    font-weight: 400;
   }
   .btn-create {
     text-align: center;
@@ -303,7 +348,7 @@ nav {
   }
 
   .input {
-    padding: 1.8rem;
+    padding: 1rem;
   }
   .meme-image {
     width: 250px;
@@ -315,8 +360,11 @@ nav {
     max-height: 400px;
   }
   .customizeMeme {
-    width: calc(100vw - 60%);
-    max-height: 400px;
+    width: calc(100vw - 50%);
+    max-height: 450px;
+  }
+  .home {
+    font-size: 1.6rem;
   }
 }
 
@@ -360,8 +408,8 @@ nav {
     max-height: 350px;
   }
   .customizeMeme {
-    width: calc(100vw - 75%);
-    max-height: 350px;
+    width: calc(100vw - 50%);
+    max-height: 700px;
   }
 }
 

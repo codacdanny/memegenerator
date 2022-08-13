@@ -10,7 +10,7 @@ const GeneratedMeme = () => {
   let query = url.get("url");
 
   const downloadImage = () => {
-    saveAs(query, "image.jpg");
+    saveAs(query, "meme.jpg");
   };
   return (
     <div>

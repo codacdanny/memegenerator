@@ -80,9 +80,7 @@ const MemeImage = (props) => {
         <button className="btn" onClick={generateMeme}>
           Create Meme
         </button>
-        <button className="btn" onClick={() => navigate("/")}>
-          Home
-        </button>
+        
       </div>
     </div>
   );
