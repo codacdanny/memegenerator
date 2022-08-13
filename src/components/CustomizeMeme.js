@@ -18,7 +18,7 @@ const CustomizeMeme = ({ image }) => {
       const ctx = canvas.current.getContext("2d");
       ctx.fillStyle = "black";
       ctx.fillRect(0, 0, 400, 256 + 80); // here we will change to canvas width and height for responsiveness
-      // let element = document.getElementById("cow");
+
       const rawImage = new Image();
       rawImage.src = image;
       ctx.drawImage(rawImage, 60, 40, 280, 256);
@@ -27,6 +27,7 @@ const CustomizeMeme = ({ image }) => {
       ctx.textAlign = "center";
       ctx.fillText(topText, 400 / 2, 25);
       ctx.fillText(bottomText, 400 / 2, 256 + 40 + 25);
+      // eslint-disable-next-line
       finishedImage = canvas.current.toDataURL("image/jpg");
     }
   }, [image, canvas, topText, bottomText]);
@@ -50,7 +51,6 @@ const CustomizeMeme = ({ image }) => {
 
       <div className="centerBtn">
         <button className="btn" onClick={downloadImage}>
-         
           Download Image
         </button>
       </div>
