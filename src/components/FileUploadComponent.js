@@ -14,14 +14,11 @@ const FileUploadComponent = ({ children }) => {
     return { url: "https://httpbin.org/post" };
   };
   const onFileChange = ({ meta, file }, status) => {
-    console.log(meta, file, status);
     if (status === "done") {
       setImage(meta.previewUrl);
     }
   };
-  const onSubmit = (files, allFiles) => {
-    allFiles.forEach((f) => f.remove());
-  };
+
   const getFilesFromEvent = (e) => {
     return new Promise((resolve) => {
       getDroppedOrSelectedFiles(e).then((chosenFiles) => {
@@ -60,7 +57,6 @@ const FileUploadComponent = ({ children }) => {
   ) : (
     <div>
       <Dropzone
-        onSubmit={onSubmit}
         onChangeStatus={onFileChange}
         InputComponent={selectFileInput}
         getUploadParams={fileParams}
