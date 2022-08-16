@@ -44,7 +44,7 @@ const HomePage = () => {
       </div>
     </main>
   ) : (
-    <div className="lds-hourglass"></div>
+    <div className="lds-hourglass"> loading</div>
   );
 };
 

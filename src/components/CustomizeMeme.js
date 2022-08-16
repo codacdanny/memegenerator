@@ -35,12 +35,14 @@ const CustomizeMeme = ({ image }) => {
     <div className="customizeMeme figure">
       <div className="customizeMemeInputs">
         <input
+        required
           placeholder="top Text"
           className="input"
           value={topText}
           onChange={(e) => setTopText(e.target.value)}
         />
         <input
+        required
           placeholder="bottom Text"
           className="input"
           value={bottomText}

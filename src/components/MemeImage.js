@@ -66,6 +66,7 @@ const MemeImage = (props) => {
       <div className="form">
         {captions.map((c, index) => (
           <input
+            required
             className="input"
             onChange={(e) => updateCaption(e, index)}
             key={index}
@@ -80,7 +81,6 @@ const MemeImage = (props) => {
         <button className="btn" onClick={generateMeme}>
           Create Meme
         </button>
-        
       </div>
     </div>
   );
