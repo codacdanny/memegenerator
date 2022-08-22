@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { saveAs } from "file-saver";
+import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 
 const CustomizeMeme = ({ image }) => {
   const downloadImage = () => {
@@ -35,14 +36,14 @@ const CustomizeMeme = ({ image }) => {
     <div className="customizeMeme figure">
       <div className="customizeMemeInputs">
         <input
-        required
+          required
           placeholder="top Text"
           className="input"
           value={topText}
           onChange={(e) => setTopText(e.target.value)}
         />
         <input
-        required
+          required
           placeholder="bottom Text"
           className="input"
           value={bottomText}

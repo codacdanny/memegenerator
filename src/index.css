@@ -244,9 +244,14 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
-.meme-image {
+/* .meme-image {
   width: 270px;
   height: 270px;
+} */
+
+.meme-image {
+  width: 270px;
+  object-fit: cover;
 }
 
 .meme {
@@ -267,7 +272,9 @@ nav {
 
 .customizeMeme {
   width: calc(100vw - 20%);
+  max-height: 100%;
 }
+
 .customizeMemeInputs {
   margin: 1rem auto;
   display: flex;
@@ -312,14 +319,14 @@ nav {
     cursor: pointer;
   }
 
-  .meme-image {
+  /* .meme-image {
     width: 220px;
     height: 220px;
-  }
+  } */
   .meme {
     display: grid;
-    grid-template-columns: repeat(2, 250px);
-    grid-template-rows: repeat(50, 1fr);
+    grid-template-columns: repeat(2, 270px);
+    grid-template-rows: repeat(50);
     gap: 3rem;
   }
   .generatedBtn {
@@ -348,10 +355,10 @@ nav {
   .input {
     padding: 1rem;
   }
-  .meme-image {
+  /* .meme-image {
     width: 250px;
     height: 250px;
-  }
+  } */
 
   .editMeme {
     width: calc(100vw - 60%);
@@ -359,7 +366,6 @@ nav {
   }
   .customizeMeme {
     width: calc(100vw - 50%);
-    max-height: 450px;
   }
   .home {
     font-size: 1.6rem;
@@ -371,13 +377,13 @@ nav {
     display: grid;
     grid-template-columns: repeat(3, 270px);
 
-    grid-template-rows: repeat(33, 1fr);
+    grid-template-rows: repeat(33);
     gap: 3rem;
   }
-  .meme-image {
+  /* .meme-image {
     width: 270px;
     height: 270px;
-  }
+  } */
   .editMeme {
     width: calc(100vw - 65%);
   }
@@ -390,16 +396,16 @@ nav {
   .meme {
     grid-template-columns: repeat(3, 280px);
   }
-  .meme-image {
+  /* .meme-image {
     width: 280px;
     height: 280px;
-  }
+  } */
 }
 
 @media screen and (min-width: 1140px) {
   .meme {
     grid-template-columns: repeat(4, 280px);
-    grid-template-rows: repeat(25, 1fr);
+    grid-template-rows: repeat(25);
   }
   .editMeme {
     width: calc(100vw - 75%);
@@ -407,7 +413,6 @@ nav {
   }
   .customizeMeme {
     width: calc(100vw - 65%);
-    max-height: 600px;
   }
 }
 
