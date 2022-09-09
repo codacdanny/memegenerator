@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { saveAs } from "file-saver";
-import { calculateNewValue } from "@testing-library/user-event/dist/utils";
 
 const CustomizeMeme = ({ image }) => {
   const downloadImage = () => {
